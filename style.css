@@ -189,7 +189,7 @@ img{ max-width: 100%; display: block; }
   filter: brightness(1.03);
 }
 
-/* ===== Header Search Button (match gallery vibe) ===== */
+/* ===== Header Search Button (match gallery ibe) ===== */
 
 .icon-btn{
   width: 44px;
@@ -813,13 +813,13 @@ textarea{
 
 
 /* CSS FOR 6 PANEL SERVICES INDEX */ 
-/* ===== Services: 6 full-width panels (Majesty style) ===== */
+/* ===== Services: 6 full-width panelzzz===== */
 
 .services-full{
   padding: 0; /* no container padding */
 }
 
-/* full-bleed wrapper */
+/* full-bleed wrappe */
 .services-grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -911,7 +911,7 @@ textarea{
 }
 
 .service-panel:hover .service-title{
-  transform: translateY(-22px); /* raise service name */
+  transform: translateY(-22px); 
 }
 
 .service-panel:hover .service-arrow{
@@ -919,18 +919,17 @@ textarea{
   transform: translateY(0);
 }
 
-/* click focus for accessibility */
+/* click focus for accessibiliy */
 .service-panel:focus-visible{
   outline: 2px solid rgba(215,179,90,0.9);
   outline-offset: -2px;
 }
 
-/* ===== Set your 6 background images here ===== */
+/* ===== bg images ===== */
 .sp-1::before{ background-image: url("windowcleaning.jpeg"); }
 .sp-2::before{ background-image: url("guttercleaning.jpeg"); }
 .sp-3::before{ background-image: url("pressure washing.webp"); }
 
-/* Replace these 3 with your real images */
 .sp-4::before{ background-image: url("deckstain.jpeg"); }
 .sp-5::before{ background-image: url("drivewayseal.webp"); }
 .sp-6::before{ background-image: url("snowremoval.jpeg"); }
