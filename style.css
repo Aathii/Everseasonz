@@ -601,6 +601,7 @@ img{ max-width: 100%; display: block; }
   height:420px;
   border-radius:0;
 }
+
 .gallery-grid{
   margin-top: 28px;
   display: grid;
