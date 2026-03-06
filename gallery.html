@@ -6,24 +6,30 @@
     <title>Gallery | EverSeasons</title>
 
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   </head>
 
   <body>
-    <header class="site-header scrolled">
+    <header class="site-header">
       <div class="container nav">
         <a class="brand" href="index.html">
           <img class="brand-logo" src="everseasonslogo.jpg" alt="EverSeasons" />
         </a>
-    
-        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
           <span></span>
           <span></span>
           <span></span>
         </button>
-    
+
         <nav class="nav-links" id="mobile-menu" aria-label="Primary">
           <a href="index.html#home">Home</a>
           <a href="index.html#about">About</a>
@@ -32,7 +38,7 @@
           <a href="index.html#faq">FAQs</a>
           <a href="index.html#contact">Contact</a>
         </nav>
-    
+
         <div class="nav-actions">
           <a class="icon-btn" href="index.html#contact" aria-label="Search">
             <span class="icon">⌕</span>
@@ -42,16 +48,15 @@
       </div>
     </header>
 
-    <main class="section section-dark" style="padding-top:140px;">
+    <main class="section section-dark" style="padding-top: 140px;">
       <div class="container">
         <p class="eyebrow">Our Work</p>
-        <h1 class="section-title" style="text-transform:uppercase;">Gallery</h1>
-        <p class="muted" style="max-width:720px;">
+        <h1 class="section-title" style="text-transform: uppercase;">Gallery</h1>
+        <p class="muted" style="max-width: 720px;">
           Before/after projects across window cleaning, gutter cleaning, pressure washing, deck staining, and more.
         </p>
 
         <div class="gallery-grid">
-          <!-- Video card (mp4 must be <video>, not <img>) -->
           <figure class="work-card">
             <video class="work-video" autoplay muted loop playsinline>
               <source src="Untitled design (1).mp4" type="video/mp4" />
@@ -87,62 +92,54 @@
     </footer>
 
     <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    
-      window.addEventListener("scroll", function () {
+      document.addEventListener("DOMContentLoaded", function () {
+        const yearEl = document.getElementById("year");
         const header = document.querySelector(".site-header");
-    
-        if (window.scrollY > 80) {
-          header.classList.add("scrolled");
-        } else {
-          header.classList.remove("scrolled");
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
+
+        if (yearEl) {
+          yearEl.textContent = new Date().getFullYear();
         }
-      });
-    </script>
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    
-      window.addEventListener("scroll", function () {
-        const header = document.querySelector(".site-header");
-    
-        if (window.scrollY > 80) {
-          header.classList.add("scrolled");
-        } else {
-          header.classList.remove("scrolled");
+
+        function handleScroll() {
+          if (!header) return;
+
+          if (window.scrollY > 80) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
         }
-      });
-    </script>
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    
-      const menuToggle = document.querySelector('.menu-toggle');
-      const navLinks = document.querySelector('.nav-links');
-    
-      if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', () => {
-          menuToggle.classList.toggle('active');
-          navLinks.classList.toggle('open');
-    
-          const expanded = menuToggle.classList.contains('active');
-          menuToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-        });
-    
-        navLinks.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            menuToggle.classList.remove('active');
-            navLinks.classList.remove('open');
-            menuToggle.setAttribute('aria-expanded', 'false');
+
+        handleScroll();
+        window.addEventListener("scroll", handleScroll);
+
+        if (menuToggle && navLinks) {
+          menuToggle.addEventListener("click", function (e) {
+            e.stopPropagation();
+            menuToggle.classList.toggle("active");
+            navLinks.classList.toggle("open");
+
+            const expanded = menuToggle.classList.contains("active");
+            menuToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
           });
-        });
-      });
-    
-      window.addEventListener("scroll", function () {
-        const header = document.querySelector(".site-header");
-    
-        if (window.scrollY > 80) {
-          header.classList.add("scrolled");
-        } else {
-          header.classList.remove("scrolled");
+
+          navLinks.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+              menuToggle.classList.remove("active");
+              navLinks.classList.remove("open");
+              menuToggle.setAttribute("aria-expanded", "false");
+            });
+          });
+
+          document.addEventListener("click", function (e) {
+            if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+              menuToggle.classList.remove("active");
+              navLinks.classList.remove("open");
+              menuToggle.setAttribute("aria-expanded", "false");
+            }
+          });
         }
       });
     </script>
