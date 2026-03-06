@@ -13,21 +13,27 @@
     <!-- Top Nav -->
     <header class="site-header">
       <div class="container nav">
-
-        <nav class="nav-links" aria-label="Primary">
+        <a href="#home" class="brand">
+          <img src="everseasonslogo.jpg" alt="EverSeasons" class="brand-logo">
+        </a>
+    
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+    
+        <nav class="nav-links" id="mobile-menu" aria-label="Primary">
           <a href="#home" class="active">Home</a>
           <a href="#about">About</a>
           <a href="#services">Services</a>
           <a href="gallery.html">Gallery</a>
-          <a href="#faq">FAQs</a>
+          <a href="#faq">FAQ</a>
           <a href="#contact">Contact</a>
         </nav>
-
+    
         <div class="nav-actions">
-          <a class="icon-btn" href="#contact" aria-label="Search">
-            <span class="icon">⌕</span>
-          </a>
-          <a class="btn btn-gold" href="#contact">BOOKING</a>
+          <a href="#contact" class="btn btn-gold">Book Now</a>
         </div>
       </div>
     </header>
@@ -404,6 +410,28 @@
           button.innerHTML = '<span class="paper" aria-hidden="true">✈</span> GET IN TOUCH';
         });
     });
+  </script>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+  
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navLinks.classList.toggle('open');
+  
+        const expanded = menuToggle.classList.contains('active');
+        menuToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      });
+  
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          menuToggle.classList.remove('active');
+          navLinks.classList.remove('open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
   </script>
   </body>
 </html>
