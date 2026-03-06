@@ -898,6 +898,12 @@ textarea{
 .sp-6::before{ background-image: url("snowremoval.jpeg"); }
 
 @media (max-width: 980px){
+  .gallery-grid{
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+  }
   .site-header{
     z-index: 9999;
     background: rgba(0,0,0,0.88);

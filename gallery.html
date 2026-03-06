@@ -82,6 +82,29 @@
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+    
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector(".site-header");
+    
+        if (window.scrollY > 80) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+    </script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector(".site-header");
+    
+        if (window.scrollY > 80) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
     </script>
   </body>
 </html>
