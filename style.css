@@ -77,16 +77,42 @@ img{ max-width: 100%; display: block; }
 /* ===== Header / Nav ===== */
 
 .site-header {
-  position: fixed;   /* header will follow scroll */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
 
   background: transparent;
-  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+  padding: 14px 0;
+  transition: background 0.35s ease, backdrop-filter 0.35s ease, box-shadow 0.35s ease;
 }
 
+.site-header .nav {
+  position: relative;
+  z-index: 2;
+}
+
+.site-header.scrolled {
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.site-header.scrolled {
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  padding: 10px 0;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  padding-top: 0;
+}
 .nav{
   display: flex;
   align-items: center;
