@@ -564,6 +564,39 @@ main{
   letter-spacing: -0.02em;
   font-weight: 1000;
 }
+/* About section owner photoz */
+
+.split-right{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  justify-items: center;
+}
+
+.photo{
+  width: 100%;
+  max-width: 100%;
+  min-height: 220px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: var(--shadow);
+  background-size: cover;
+  background-position: center;
+}
+
+.photo-1{
+  background-image: url("aathii.PNG");
+}
+
+.photo-2{
+  background-image: url("matt.PNG");
+}
+
+.photo-3{
+  background-image: url("andrew.PNG");
+  grid-column: 1 / 3;
+  max-width: calc(50% - 8px);
+}
 
 .lead{ font-weight: 900; margin: 18px 0 10px; }
 .muted{ color: var(--muted); }
@@ -581,44 +614,6 @@ main{
 }
 
 .phone-icon{ opacity: 0.9; }
-
-.split-right{
-  position: relative;
-  min-height: 420px;
-}
-
-.photo{
-  position: absolute;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,0.12);
-  box-shadow: var(--shadow);
-  background-size: cover;
-  background-position: center;
-}
-
-.photo-1{
-  width: 68%;
-  height: 58%;
-  top: 0;
-  right: 0;
-  background-image: url("assets/about-1.jpg");
-}
-
-.photo-2{
-  width: 56%;
-  height: 54%;
-  bottom: 0;
-  left: 0;
-  background-image: url("assets/about-2.jpg");
-}
-
-.photo-3{
-  width: 42%;
-  height: 40%;
-  bottom: 18%;
-  right: 22%;
-  background-image: url("assets/about-3.jpg");
-}
 
 .features{
   display: grid;
@@ -1042,7 +1037,14 @@ textarea{
   .mini-services{ grid-template-columns: 1fr; }
   .review-cards{ grid-template-columns: 1fr; }
   .split{ grid-template-columns: 1fr; }
-  .split-right{ min-height: 360px; }
+  .split-right{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  
+  .photo-3{
+    grid-column: auto;
+  }
   .features{ grid-template-columns: 1fr; }
 
   .contact-grid{ grid-template-columns: 1fr; }
