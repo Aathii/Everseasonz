@@ -1041,6 +1041,15 @@ textarea{
     grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
+  .photo{
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .photo-3{
+    grid-column: auto;
+    max-width: 100%;
+  }
 
   .features{ grid-template-columns: 1fr; }
 
