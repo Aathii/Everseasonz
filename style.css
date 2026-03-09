@@ -1041,10 +1041,7 @@ textarea{
     grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
-  
-  .photo-3{
-    grid-column: auto;
-  }
+
   .features{ grid-template-columns: 1fr; }
 
   .contact-grid{ grid-template-columns: 1fr; }
