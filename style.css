@@ -1090,3 +1090,9 @@ textarea{
     bottom: 18px;
   }
 }
+
+/* portfolio credit */
+.made-by{ color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: color .2s, border-color .2s; }
+.made-by:hover, .made-by:focus-visible{ color: #fff; border-bottom-color: currentColor; }
+/* keep the footer line clear of the floating back-to-top button */
+.footer{ padding-bottom: 76px; }
